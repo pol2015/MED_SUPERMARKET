@@ -42,12 +42,6 @@
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "Main.xaml",
-      "uniqueId": "d644e15f-192f-4af9-85c1-e27215d42ce2",
-      "input": [],
-      "output": []
-    },
-    {
       "filePath": "C1_Jumbo_SectionPageStartHere.xaml",
       "uniqueId": "14e42d6c-5bba-486d-a791-69c2b0cc2fe1",
       "input": [],
