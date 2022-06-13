@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>584,2129</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>561,1291</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>C4_JumboProductAttributes_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="52">
@@ -61,9 +61,17 @@
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="C4_JumboProductAttributes" sap:VirtualizedContainerService.HintSize="594,1964" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="C4_JumboProductAttributes" sap:VirtualizedContainerService.HintSize="476,1126" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:UiElement" Name="ElemClick" />
       <Variable x:TypeArguments="x:Int32" Name="TimeOut2000" />
@@ -74,7 +82,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign DisplayName="TimeOut2000" sap:VirtualizedContainerService.HintSize="552,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign DisplayName="TimeOut2000" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[TimeOut2000]</OutArgument>
       </Assign.To>
@@ -82,7 +90,7 @@
         <InArgument x:TypeArguments="x:Int32">2000</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="TimeOut5000" sap:VirtualizedContainerService.HintSize="552,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <Assign DisplayName="TimeOut5000" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[TimeOut5000]</OutArgument>
       </Assign.To>
@@ -90,7 +98,7 @@
         <InArgument x:TypeArguments="x:Int32">5000</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayMS="[TimeOut2000]" DisplayName="Type Into in_ProductName" EmptyField="True" sap:VirtualizedContainerService.HintSize="552,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[in_ProductName]">
+    <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayMS="[TimeOut2000]" DisplayName="Type Into in_ProductName" EmptyField="True" sap:VirtualizedContainerService.HintSize="434,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[in_ProductName]">
       <ui:TypeInto.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5a4ac068-47d8-43e1-8b59-b9fc93be551c" InformativeScreenshot="7d37ba139d2cf134710476e71e2586b0" Selector="&lt;html app='chrome.exe' url='https://www.tiendasjumbo.co/supermercado/*' /&gt;&lt;webctrl id='downshift-*-input' tag='INPUT' /&gt;" TimeoutMS="[TimeOut2000]">
           <ui:Target.WaitForReady>
@@ -105,7 +113,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:TypeInto>
-    <ui:WaitImageVanish DisplayName="Wait Image Vanish Produto" sap:VirtualizedContainerService.HintSize="552,106" sap2010:WorkflowViewState.IdRef="WaitImageVanish_1">
+    <ui:WaitImageVanish DisplayName="Wait Image Vanish Produto" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="WaitImageVanish_1">
       <ui:WaitImageVanish.Image>
         <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAADEAAAAsCAYAAADM1FBZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARZSURBVGhD7ZnZK31fGMZ//5NZRFIilDmKCyUSF2QuSZRyo1xIlJRSXLgxpESmJLkwZQpJIhdS5vn99VmtvdtOZ9g4U9889eZ01jp7r2etd3je5T/5B/BHIljwR8LA3d2dnJ+fy/j4uKyvr+tv/Ydfk1hdXZXe3l4pKiqStLQ0yc/Pl7GxMXl4eNAzfI8fkbi6upLl5WVpaWmRnJwcCQkJkdDQUPUX6+/vl5ubGz3b9/g2ib29Peno6JDU1FSJiooyF45FRERIenq6TE9P69n+gW0SLy8vyu9ramrUYh0Xn5ycLNXV1TIxMaFixJ+wTWJlZUXq6+slOjraXHxMTIzk5eWp7xcWFuTy8lLe3t70L/wHWyR2d3elpKRELdogQAw0NDSo2OCUArF4Ax5J4ELd3d3m4g3DrY6PjxWBQMMjCYK0sLDQXHx8fLzU1tbK1taWnhF4uCVBrm9qavoSyOXl5bKzsyPv7+96VuDhlgSnkJGRYRJISkqS4eFhPRo8cEuioqLiSy2guB0cHOjR4IFLEicnJxIbG2sSwNBFT09PekbwwCWJkZERSUxMNAmUlZX5vYjZhUsSra2tX06ir69Pbm9v9WhwwSkJXKmqqsokEBkZKTMzM/L6+qpnBBecktje3pbi4mKTBPJ6cXFRjwYfnJK4vr5W6dQgkZWVJRsbG3o0+OCUxP7+vmpyDBJU6YuLC/n8/NQzggtOSRwdHSnBZ5BAdgSi7bQLpyQeHx8lMzNTwsLCFIm4uDiZnZ0NqFJ1B6ckcJ3m5mbzJOghenp69KjvQfc4NDQkc3Nz8vz8rL91DackwMDAgCQkJCgS4eHhqnfwh+zmtLu6upRmw9ra2pR7u4NLEtQKWk7jNHggqdeXYJPIgoYbY7m5ucoz3MElCdJsXV2d+TCEIM3Rx8eHnuF9nJ6eSnt7u/lOWgBEqCe4JAEGBwfNB2IE+/z8vM8q99TUlKSkpJjv4/Pk5KQedQ23JAA3GEZTxGk0NjaqHfMmaLA2NzelsrLSJEAc0oDZEZ0eSaytrUlBQYH5cDIVR05f4a3ujmfR8loFZ3Z2toyOjuoZ7uGRBDd5ZAt2xngBxkvZvd8At3SMA8M6OzvVRYQdeCQBWCynYSXCrnH8+DEL+W76JUEQX7in411WaWmpnJ2d6ZmeYYsELzw8PFTy3Hr3hBF87CSp8f7+XvUc1sA39JZR7SFLqibTkSis7S+bxDuWlpbUXLuwRQJQOXk4u2QlYTW6P5oneg+kO8TI8eguZAtVn6JJzXG8x4UAp81m2anSVtgmYYBjxl8JPMc4MYwmigUh4VHACEj0F27j+BsyH3OJO9z2J3Xo2yQAAUfmIAXiTtZ7qe8aKZwM+Jt/BfyIhAFyOMUIMgQ6FwuONySGGVICPYacQQ1QTL2BX5GwAq3FDQkXDAQn7S3dIc0VvQlBjDJGWDIXWeMteI2EFSySDMRC6RJRofQonoTcT+ETEv7GH4nggMj/IKkCmrw6jjIAAAAASUVORK5CYII=" />
       </ui:WaitImageVanish.Image>
@@ -123,7 +131,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:WaitImageVanish>
-    <TryCatch DisplayName="Try Catch Attach W Search R" sap:VirtualizedContainerService.HintSize="552,1352" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+    <TryCatch DisplayName="Try Catch Attach W Search R" sap:VirtualizedContainerService.HintSize="434,514" sap2010:WorkflowViewState.IdRef="TryCatch_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -131,13 +139,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" Window="{x:Null}" DisplayName="Attach Window Search Result" sap:VirtualizedContainerService.HintSize="514,1125" sap2010:WorkflowViewState.IdRef="WindowScope_2" Selector="&lt;html app='chrome.exe' url='https://www.tiendasjumbo.co/supermercado/*' /&gt;&lt;webctrl tag='SECTION' parentclass='vtex-search-2-x-tileListItem' /&gt;" TimeoutMS="[TimeOut5000]">
+        <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" Window="{x:Null}" DisplayName="Attach Window Search Result" sap:VirtualizedContainerService.HintSize="514,1256" sap2010:WorkflowViewState.IdRef="WindowScope_2" Selector="&lt;html app='chrome.exe' url='https://www.tiendasjumbo.co/supermercado/*' /&gt;&lt;webctrl tag='SECTION' parentclass='vtex-search-2-x-tileListItem' /&gt;" TimeoutMS="[TimeOut5000]">
           <ui:WindowScope.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do C4_JumboProductAttributes" sap:VirtualizedContainerService.HintSize="480,1017" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="Do C4_JumboProductAttributes" sap:VirtualizedContainerService.HintSize="480,1148" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="CodProd" />
                 </Sequence.Variables>
@@ -258,6 +266,7 @@
                     <InArgument x:TypeArguments="x:String">[CodProd]</InArgument>
                   </Assign.Value>
                 </Assign>
+                <ui:LogMessage DisplayName="Log Message out_ProductCode" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Product Code for &quot; &amp; in_ProductName &amp; &quot; is &quot; &amp; out_ProductCode]" />
               </Sequence>
             </ActivityAction>
           </ui:WindowScope.Body>
@@ -270,10 +279,10 @@
         </ui:WindowScope>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="518,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,352" sap2010:WorkflowViewState.IdRef="Catch`1_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -281,14 +290,22 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Assign DisplayName="out_ProductCode 00000" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[out_ProductCode]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">000000</InArgument>
-              </Assign.Value>
-            </Assign>
+            <Sequence DisplayName="Seq ProductCode 00000" sap:VirtualizedContainerService.HintSize="376,283" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign DisplayName="out_ProductCode 00000" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[out_ProductCode]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">000000</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:LogMessage DisplayName="Log Message Error Product Code" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Product Code for &quot; &amp; in_ProductName &amp; &quot; not available&quot;]" />
+            </Sequence>
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
