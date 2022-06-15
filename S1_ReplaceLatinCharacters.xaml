@@ -65,7 +65,7 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="S1_ReplaceLatinCharacters" sap:VirtualizedContainerService.HintSize="376,450" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="S1_ReplaceLatinCharacters" sap:VirtualizedContainerService.HintSize="376,549" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -82,6 +82,7 @@
     </Assign>
     <ui:Replace DisplayName="Replace Space" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="Replace_1" Input="[out_String]" IsBuilderTabModified="False" Pattern="%[\s+,]" RegexOption="IgnoreCase, Compiled" Replacement=" " Result="[out_String]" />
     <ui:Replace DisplayName="Replace Double Space" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="Replace_2" Input="[out_String]" IsBuilderTabModified="False" Pattern="  " RegexOption="IgnoreCase, Compiled" Replacement=" " Result="[out_String]" />
+    <ui:Replace DisplayName="Replace Single Space with -" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="Replace_3" Input="[out_String]" IsBuilderTabModified="False" Pattern=" " RegexOption="IgnoreCase, Compiled" Replacement="-" Result="[out_String]" />
     <Assign DisplayName="out_String.ToLower" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[out_String]</OutArgument>

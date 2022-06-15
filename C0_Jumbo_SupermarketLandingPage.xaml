@@ -63,7 +63,7 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="C0_Jumbo_SupermarketLandingPage" sap:VirtualizedContainerService.HintSize="917,3519" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -83,7 +83,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Starting C0" sap:VirtualizedContainerService.HintSize="875,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Starting C0 at &quot; &amp; DateTime.Now.ToShortTimeString]" />
+    <ui:LogMessage DisplayName="Log Message Starting C0" sap:VirtualizedContainerService.HintSize="875,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Starting C0 at &quot; &amp; DateTime.Now.ToShortTimeString]" />
     <Assign DisplayName="TimeOut3000" sap:VirtualizedContainerService.HintSize="875,60" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[TimeOut3000]</OutArgument>
@@ -250,29 +250,19 @@
                         <InArgument x:TypeArguments="x:String">[LandingPagePrefix &amp; CurrentRow(0).ToString &amp; LandingPageSufix]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <ui:LogMessage DisplayName="Log Message Starting CX" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn" Message="[&quot;Starting &quot; &amp; SelectedXaml &amp; &quot; at &quot; &amp; DateTime.Now.ToShortTimeString]" />
-                    <ui:LogMessage DisplayName="Log Message Starting C1" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[&quot;Starting &quot; &amp; SelectedXaml &amp; &quot; Index &quot; &amp; SectionNameIndex.ToString &amp; &quot; at &quot; &amp; DateTime.Now.ToShortTimeString]" />
+                    <ui:LogMessage DisplayName="Log Message Starting CX" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Starting &quot; &amp; SelectedXaml &amp; &quot; at &quot; &amp; DateTime.Now.ToShortTimeString]" />
+                    <ui:LogMessage DisplayName="Log Message Starting C1" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Starting &quot; &amp; SelectedXaml &amp; &quot; Index &quot; &amp; SectionNameIndex.ToString &amp; &quot; at &quot; &amp; DateTime.Now.ToShortTimeString]" />
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke C6_Jumbo_GetSubCategoria workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="C6_Jumbo_GetSubCategoria.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="ui:Browser" x:Key="in_JumboLandingPage">
-                          <mva:VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="LandingPageJumbo" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_SectionLandingPageURL">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="LandingPageURL" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_IsGetSubCategoriaTrue">
-                          <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="IsGetSubCategoriaTrue" />
-                        </InArgument>
+                        <InArgument x:TypeArguments="ui:Browser" x:Key="in_JumboLandingPage">[LandingPageJumbo]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_SectionLandingPageURL">[LandingPageURL]</InArgument>
+                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_IsGetSubCategoriaTrue">[IsGetSubCategoriaTrue]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke C1_Jumbo_SectionPageStartHere workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="C1_Jumbo_Section.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_LandingPageURL">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="LandingPageURL" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_IsSkipC1_JumboSection">
-                          <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="IsSkipC1_JumboSection" />
-                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LandingPageURL">[LandingPageURL]</InArgument>
+                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_IsSkipC1_JumboSection">[IsSkipC1_JumboSection]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                   </Sequence>
