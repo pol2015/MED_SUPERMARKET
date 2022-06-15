@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>698,1996</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>765,1584</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>C6_Jumbo_GetSubCategoria_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -67,44 +67,40 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="C6_Jumbo_GetSubCategoria" sap:VirtualizedContainerService.HintSize="708,1831" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="C6_Jumbo_GetSubCategoria" sap:VirtualizedContainerService.HintSize="775,1419" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="istring" />
       <Variable x:TypeArguments="x:Boolean" Name="IsErrorSubCategory" />
+      <Variable x:TypeArguments="x:String" Name="SectionName" />
+      <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+      <Variable x:TypeArguments="x:String" Name="SectionNameTrimmed" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If Condition="[in_IsGetSubCategoriaTrue]" DisplayName="If in_IsGetSubCategoriaTrue" sap:VirtualizedContainerService.HintSize="666,1739" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[in_IsGetSubCategoriaTrue]" DisplayName="If in_IsGetSubCategoriaTrue" sap:VirtualizedContainerService.HintSize="733,1327" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
-        <Sequence DisplayName="Data Scraping  SubCategory" sap:VirtualizedContainerService.HintSize="630,1562" sap2010:WorkflowViewState.IdRef="Sequence_12">
-          <Sequence.Variables>
-            <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
-          </Sequence.Variables>
+        <Sequence DisplayName="Data Scraping  SubCategory" sap:VirtualizedContainerService.HintSize="697,1150" sap2010:WorkflowViewState.IdRef="Sequence_12">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_JumboLandingPage]" BrowserType="Chrome" DisplayName="Attach in_JumboLandingPage" sap:VirtualizedContainerService.HintSize="588,1470" sap2010:WorkflowViewState.IdRef="BrowserScope_5" InformativeScreenshot="42d06396f9a412841f675c03be2f0a7e">
+          <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_JumboLandingPage]" BrowserType="Chrome" DisplayName="Attach in_JumboLandingPage" sap:VirtualizedContainerService.HintSize="655,1058" sap2010:WorkflowViewState.IdRef="BrowserScope_5" InformativeScreenshot="42d06396f9a412841f675c03be2f0a7e">
             <ui:BrowserScope.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do in_JumboLandingPage" sap:VirtualizedContainerService.HintSize="554,1324" sap2010:WorkflowViewState.IdRef="Sequence_13">
-                  <Sequence.Variables>
-                    <Variable x:TypeArguments="x:String" Name="SectionName" />
-                  </Sequence.Variables>
+                <Sequence DisplayName="Do in_JumboLandingPage" sap:VirtualizedContainerService.HintSize="621,912" sap2010:WorkflowViewState.IdRef="Sequence_13">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="IsErrorSubCategory" sap:VirtualizedContainerService.HintSize="512,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                  <Assign DisplayName="IsErrorSubCategory" sap:VirtualizedContainerService.HintSize="579,60" sap2010:WorkflowViewState.IdRef="Assign_6">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Boolean">[IsErrorSubCategory]</OutArgument>
                     </Assign.To>
@@ -112,8 +108,8 @@
                       <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To in_SectionLandingPageURL" sap:VirtualizedContainerService.HintSize="512,59" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[in_SectionLandingPageURL]" />
-                  <TryCatch DisplayName="Try Catch in_SectionName" sap:VirtualizedContainerService.HintSize="512,291" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                  <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To in_SectionLandingPageURL" sap:VirtualizedContainerService.HintSize="579,59" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[in_SectionLandingPageURL]" />
+                  <TryCatch DisplayName="Try Catch in_SectionName" sap:VirtualizedContainerService.HintSize="579,333" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -138,10 +134,10 @@
                       </ui:GetValue>
                     </TryCatch.Try>
                     <TryCatch.Catches>
-                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,129" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
@@ -161,14 +157,25 @@
                       </Catch>
                     </TryCatch.Catches>
                   </TryCatch>
-                  <If Condition="[IsErrorSubCategory = False]" DisplayName="If IsErrorSubCategory" sap:VirtualizedContainerService.HintSize="512,702" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If Condition="[IsErrorSubCategory = False]" DisplayName="If IsErrorSubCategory" sap:VirtualizedContainerService.HintSize="579,248" sap2010:WorkflowViewState.IdRef="If_1">
                     <If.Then>
-                      <Sequence DisplayName="Seq IsErrorSubCategory" sap:VirtualizedContainerService.HintSize="476,526" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                      <Sequence DisplayName="Seq IsErrorSubCategory" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_16">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
+                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke S1_ReplaceLatinCharacters workflow" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="S1_ReplaceLatinCharacters.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <OutArgument x:TypeArguments="x:String" x:Key="out_String">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="SectionNameTrimmed" />
+                            </OutArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_String">
+                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SectionName" />
+                            </InArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                        </ui:InvokeWorkflowFile>
                         <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Structured Data SubCategory" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='SubCategName' attr='text'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='label' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="ExtractData_2" MaxNumberOfResults="100" SimulateClick="True">
                           <ui:ExtractData.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c998c20b-785e-4977-b67d-00cf185291e3" InformativeScreenshot="c3e6de850c461c47359f4d3d276fa83d" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' tag='DIV' /&gt;" WaitForReady="COMPLETE">
@@ -178,7 +185,7 @@
                             </ui:Target>
                           </ui:ExtractData.Target>
                         </ui:ExtractData>
-                        <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope SubCategory" sap:VirtualizedContainerService.HintSize="434,288" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="Jumbo_SubCategoriesPerSection.xlsx">
+                        <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope SubCategory" sap:VirtualizedContainerService.HintSize="434,288" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Visible="False" WorkbookPath="INI\Jumbo_SubCategoriesPerSection.xlsx">
                           <ui:ExcelApplicationScope.Body>
                             <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                               <ActivityAction.Argument>
@@ -190,13 +197,17 @@
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:ExcelAppendRange DataTable="[ExtractDataTable]" DisplayName="Append Range SubCategory" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_1" SheetName="[SectionName]" />
+                                <ui:ExcelAppendRange DataTable="[ExtractDataTable]" DisplayName="Append Range SubCategory" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_1" SheetName="[SectionNameTrimmed]" />
                               </Sequence>
                             </ActivityAction>
                           </ui:ExcelApplicationScope.Body>
                         </ui:ExcelApplicationScope>
+                        <ui:LogMessage DisplayName="Log Message SubCategoroes True" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[ExtractDataTable.Rows.Count &amp; &quot; SubCategories saved for section name &quot; &amp; SectionName]" />
                       </Sequence>
                     </If.Then>
+                    <If.Else>
+                      <ui:LogMessage DisplayName="Log Message SubCategory Error" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[&quot;No SubCategory available for url: &quot; &amp; in_SectionLandingPageURL]" />
+                    </If.Else>
                   </If>
                 </Sequence>
               </ActivityAction>
