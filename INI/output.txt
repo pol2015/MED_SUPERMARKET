@@ -1,0 +1,74 @@
+07/15/2022 16:01:14 => [Info] MED_SUPERMARKET execution started
+07/15/2022 16:01:15 => [Info] Starting C0 at 16:01
+07/15/2022 16:01:18 => [Warning] File INI\Jumbo_SubCategoriesPerSection.xlsx deleted
+07/15/2022 16:01:18 => [Info] Starting C0 at 16:01
+07/15/2022 16:01:18 => [Info] Starting C0 Index 0 at 16:01
+07/15/2022 16:01:24 => [Info] SectionNameTrimmed = carne-y-pollo
+07/15/2022 16:01:28 => [Warning] 8 SubCategories saved for section name Carne Y Pollo
+07/15/2022 16:01:28 => [Info] Starting C0 at 16:01
+07/15/2022 16:01:28 => [Info] Starting C0 Index 1 at 16:01
+07/15/2022 16:01:33 => [Info] SectionNameTrimmed = frutas-y-verduras
+07/15/2022 16:01:37 => [Warning] 5 SubCategories saved for section name Frutas Y Verduras
+07/15/2022 16:01:37 => [Info] Starting C0 at 16:01
+07/15/2022 16:01:37 => [Info] Starting C0 Index 2 at 16:01
+07/15/2022 16:01:42 => [Info] SectionNameTrimmed = pescados-y-mariscos
+07/15/2022 16:01:45 => [Warning] 5 SubCategories saved for section name Pescados Y Mariscos
+07/15/2022 16:01:45 => [Info] Starting C0 at 16:01
+07/15/2022 16:01:45 => [Info] Starting C0 Index 3 at 16:01
+07/15/2022 16:02:21 => [Error] No SubCategory available for url: https://www.tiendasjumbo.co/supermercado/vinos-y-licores?order=OrderByNameASC&page=
+07/15/2022 16:02:21 => [Info] Starting C0 at 16:02
+07/15/2022 16:02:21 => [Info] Starting C0 Index 4 at 16:02
+07/15/2022 16:02:35 => [Info] SectionNameTrimmed = despensa
+07/15/2022 16:02:39 => [Warning] 10 SubCategories saved for section name Despensa
+07/15/2022 16:02:39 => [Info] Starting C0 at 16:02
+07/15/2022 16:02:39 => [Info] Starting C0 Index 5 at 16:02
+07/15/2022 16:02:52 => [Info] SectionNameTrimmed = panaderia-y-pasteleria
+07/15/2022 16:02:56 => [Warning] 4 SubCategories saved for section name Panadería Y Pastelería
+07/15/2022 16:02:56 => [Info] Starting C0 at 16:02
+07/15/2022 16:02:56 => [Info] Starting C0 Index 6 at 16:02
+07/15/2022 16:02:58 => [Info] SectionNameTrimmed = lacteos-huevos-y-refrigerados
+07/15/2022 16:03:02 => [Warning] 10 SubCategories saved for section name Lácteos, Huevos Y Refrigerados
+07/15/2022 16:03:02 => [Info] Starting C0 at 16:03
+07/15/2022 16:03:02 => [Info] Starting C0 Index 7 at 16:03
+07/15/2022 16:03:04 => [Info] SectionNameTrimmed = charcuteria
+07/15/2022 16:03:05 => [Warning] 4 SubCategories saved for section name Charcutería
+07/15/2022 16:03:05 => [Info] Starting C0 at 16:03
+07/15/2022 16:03:05 => [Info] Starting C0 Index 8 at 16:03
+07/15/2022 16:03:42 => [Error] No SubCategory available for url: https://www.tiendasjumbo.co/supermercado/productos-congelados?order=OrderByNameASC&page=
+07/15/2022 16:03:42 => [Info] Starting C0 at 16:03
+07/15/2022 16:03:42 => [Info] Starting C0 Index 9 at 16:03
+07/15/2022 16:03:45 => [Info] SectionNameTrimmed = dulces-y-postres
+07/15/2022 16:03:49 => [Warning] 7 SubCategories saved for section name Dulces Y Postres
+07/15/2022 16:03:49 => [Info] Starting C0 at 16:03
+07/15/2022 16:03:49 => [Info] Starting C0 Index 10 at 16:03
+07/15/2022 16:03:51 => [Info] SectionNameTrimmed = pasabocas
+07/15/2022 16:03:55 => [Warning] 7 SubCategories saved for section name Pasabocas
+07/15/2022 16:03:55 => [Info] Starting C0 at 16:03
+07/15/2022 16:03:55 => [Info] Starting C0 Index 11 at 16:03
+07/15/2022 16:04:06 => [Info] SectionNameTrimmed = platos-preparados
+07/15/2022 16:04:10 => [Warning] 10 SubCategories saved for section name Platos Preparados
+07/15/2022 16:04:10 => [Info] Starting C0 at 16:04
+07/15/2022 16:04:10 => [Info] Starting C0 Index 12 at 16:04
+07/15/2022 16:04:17 => [Info] SectionNameTrimmed = cuidado-de-ropa-y-calzado
+07/15/2022 16:04:21 => [Warning] 6 SubCategories saved for section name Cuidado De Ropa Y Calzado
+07/15/2022 16:04:21 => [Info] Starting C0 at 16:04
+07/15/2022 16:04:21 => [Info] Starting C0 Index 13 at 16:04
+07/15/2022 16:04:26 => [Info] SectionNameTrimmed = aseo-de-hogar
+07/15/2022 16:04:30 => [Warning] 9 SubCategories saved for section name Aseo De Hogar
+07/15/2022 16:04:30 => [Info] Starting C0 at 16:04
+07/15/2022 16:04:30 => [Info] Starting C0 Index 14 at 16:04
+07/15/2022 16:04:35 => [Info] SectionNameTrimmed = cuidado-personal
+07/15/2022 16:04:39 => [Warning] 10 SubCategories saved for section name Cuidado Personal
+07/15/2022 16:04:39 => [Info] Starting C0 at 16:04
+07/15/2022 16:04:39 => [Info] Starting C0 Index 15 at 16:04
+07/15/2022 16:04:43 => [Info] SectionNameTrimmed = bebidas
+07/15/2022 16:04:47 => [Warning] 6 SubCategories saved for section name Bebidas
+07/15/2022 16:04:47 => [Info] Starting C0 at 16:04
+07/15/2022 16:04:47 => [Info] Starting C0 Index 16 at 16:04
+07/15/2022 16:04:52 => [Info] SectionNameTrimmed = belleza
+07/15/2022 16:04:55 => [Warning] 9 SubCategories saved for section name Belleza
+07/15/2022 16:04:55 => [Info] Starting C0 at 16:04
+07/15/2022 16:04:55 => [Info] Starting C0 Index 17 at 16:04
+07/15/2022 16:05:03 => [Info] SectionNameTrimmed = limpieza-de-cocina
+07/15/2022 16:05:06 => [Warning] 7 SubCategories saved for section name Limpieza De Cocina
+07/15/2022 16:05:07 => [Info] MED_SUPERMARKET execution ended in: 00:03:52

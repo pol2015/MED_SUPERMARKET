@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="C0_Jumbo_SupermarketLandingPage" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1073,3325" sap2010:WorkflowViewState.IdRef="C0_Jumbo_SupermarketLandingPage_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="C0_Jumbo_SupermarketLandingPage" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1514,4628" sap2010:WorkflowViewState.IdRef="C0_Jumbo_SupermarketLandingPage_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="34">
       <x:String>System.Activities</x:String>
@@ -70,7 +70,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="C0_Jumbo_SupermarketLandingPage" sap:VirtualizedContainerService.HintSize="1083,3160" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="C0_Jumbo_SupermarketLandingPage" sap:VirtualizedContainerService.HintSize="1083,4563" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="TimeOut3000" />
       <Variable x:TypeArguments="ui:Browser" Name="LandingPageJumbo" />
@@ -125,15 +125,15 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InputDialog>
-    <If Condition="[GetSubCategOption = &quot;YES&quot;]" DisplayName="If GetSubCategOption" sap:VirtualizedContainerService.HintSize="1041,52" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[GetSubCategOption = &quot;YES&quot;]" DisplayName="If GetSubCategOption" sap:VirtualizedContainerService.HintSize="1041,1277" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Seq IsGetSubCategoriaTrue T" sap:VirtualizedContainerService.HintSize="526,1000" sap2010:WorkflowViewState.IdRef="Sequence_7">
+        <Sequence DisplayName="Seq IsGetSubCategoriaTrue T" sap:VirtualizedContainerService.HintSize="526,1117" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -143,6 +143,14 @@
           <Assign DisplayName="IsGetSubCategoriaTrue T" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_8">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">[IsGetSubCategoriaTrue]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="IsC1_RunTypeCategory TT" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[IsC1_RunTypeCategory]</OutArgument>
             </Assign.To>
             <Assign.Value>
               <InArgument x:TypeArguments="x:Boolean">True</InArgument>
@@ -164,8 +172,8 @@
               <InArgument x:TypeArguments="x:String">["INI\Jumbo_SubCategoriesPerSection.xlsx"]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:PathExists DisplayName="Path Exists SubCategoryExcelFile" Exists="[IsExcelFileTrue]" sap:VirtualizedContainerService.HintSize="484,89" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[SubCategoryExcelFile]" PathType="File" />
-          <If Condition="[IsExcelFileTrue]" DisplayName="If IsExcelFileTrue" sap:VirtualizedContainerService.HintSize="484,479" sap2010:WorkflowViewState.IdRef="If_2">
+          <ui:PathExists DisplayName="Path Exists SubCategoryExcelFile" Exists="[IsExcelFileTrue]" sap:VirtualizedContainerService.HintSize="484,90" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[SubCategoryExcelFile]" PathType="File" />
+          <If Condition="[IsExcelFileTrue]" DisplayName="If IsExcelFileTrue" sap:VirtualizedContainerService.HintSize="484,495" sap2010:WorkflowViewState.IdRef="If_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -173,21 +181,21 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="376,302" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence sap:VirtualizedContainerService.HintSize="376,305" sap2010:WorkflowViewState.IdRef="Sequence_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:Delete ContinueOnError="{x:Null}" DisplayName="Delete SubCategoryExcelFile" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[SubCategoryExcelFile]" />
-                <ui:LogMessage DisplayName="Log Message SubCategoryExcelFile" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[&quot;File &quot; &amp; SubCategoryExcelFile &amp; &quot; deleted&quot;]" />
+                <ui:Delete ContinueOnError="{x:Null}" DisplayName="Delete SubCategoryExcelFile" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[SubCategoryExcelFile]" />
+                <ui:LogMessage DisplayName="Log Message SubCategoryExcelFile" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[&quot;File &quot; &amp; SubCategoryExcelFile &amp; &quot; deleted&quot;]" />
               </Sequence>
             </If.Then>
           </If>
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_9">
+        <Sequence sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -213,15 +221,15 @@
         </Sequence>
       </If.Else>
     </If>
-    <If Condition="[IsGetSubCategoriaTrue = False]" DisplayName="If IsGetSubCategoriaTrue False" sap:VirtualizedContainerService.HintSize="1041,660" sap2010:WorkflowViewState.IdRef="If_3">
+    <If Condition="[IsGetSubCategoriaTrue = False]" DisplayName="If IsGetSubCategoriaTrue False" sap:VirtualizedContainerService.HintSize="1041,838" sap2010:WorkflowViewState.IdRef="If_3">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,480" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <Sequence sap:VirtualizedContainerService.HintSize="611,648" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog C1_RunTypeSelected" sap:VirtualizedContainerService.HintSize="334,296" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="C1 Category or C1 SubCategory URLs" OptionsString="Category;SubCategory" Title="Select Category or SubCategory Run Type">
+          <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog C1_RunTypeSelected" sap:VirtualizedContainerService.HintSize="569,296" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="C1 Category or C1 SubCategory URLs" OptionsString="Category;SubCategory" Title="Select Category or SubCategory Run Type">
             <ui:InputDialog.Result>
               <OutArgument x:TypeArguments="x:String">[C1_RunTypeSelected]</OutArgument>
             </ui:InputDialog.Result>
@@ -232,10 +240,10 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:InputDialog>
-          <If Condition="[C1_RunTypeSelected = &quot;Category&quot;]" DisplayName="If C1_RunTypeSelected" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="If_4">
+          <If Condition="[C1_RunTypeSelected = &quot;Category&quot;]" DisplayName="If C1_RunTypeSelected" sap:VirtualizedContainerService.HintSize="569,220" sap2010:WorkflowViewState.IdRef="If_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -340,12 +348,8 @@
                         </ui:InvokeWorkflowFile>
                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke C1_Jumbo_SectionPageStartHere Category" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="C1_Jumbo_Section.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_LandingPageURL">
-                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="LandingPageURL" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:Boolean" x:Key="in_IsSkipC1_JumboSection">
-                              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="IsSkipC1_JumboSection" />
-                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_LandingPageURL">[LandingPageURL]</InArgument>
+                            <InArgument x:TypeArguments="x:Boolean" x:Key="in_IsSkipC1_JumboSection">[IsSkipC1_JumboSection]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="in_SubCategoryName" />
                             <InArgument x:TypeArguments="x:String" x:Key="in_LandingPageSubCategoryURL" />
                           </ui:InvokeWorkflowFile.Arguments>
@@ -397,7 +401,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:ExcelGetWorkbookSheets DisplayName="Get Workbook Sheets Categ" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="ExcelGetWorkbookSheets_1" Sheets="[SectionNameTabsList]" />
-                        <ui:ExcelReadRange AddHeaders="True" DataTable="[dt_SubCategory]" DisplayName="Read Range dt_SubCategory" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="[SectionNameTabsList(0).ToString]">
+                        <ui:ExcelReadRange AddHeaders="False" DataTable="[dt_SubCategory]" DisplayName="Read Range dt_SubCategory" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="[SectionNameTabsList(0).ToString]">
                           <ui:ExcelReadRange.Range>
                             <InArgument x:TypeArguments="x:String">
                               <Literal x:TypeArguments="x:String" Value="" />
@@ -460,18 +464,10 @@
                         <ui:LogMessage DisplayName="Log Message Starting C1" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Starting &quot; &amp; SelectedXaml &amp; &quot; Index &quot; &amp; SectionNameIndex.ToString &amp; &quot; at &quot; &amp; DateTime.Now.ToShortTimeString]" />
                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke C1_Jumbo_SectionPageStartHere SubCategory" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="C1_Jumbo_Section.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_LandingPageURL">
-                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="LandingPageURL" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:Boolean" x:Key="in_IsSkipC1_JumboSection">
-                              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="IsSkipC1_JumboSection" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_SubCategoryName">
-                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SubCategoryClickName" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_LandingPageSubCategoryURL">
-                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="LandingPageSubCategoryURL" />
-                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_LandingPageURL">[LandingPageURL]</InArgument>
+                            <InArgument x:TypeArguments="x:Boolean" x:Key="in_IsSkipC1_JumboSection">[IsSkipC1_JumboSection]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_SubCategoryName">[SubCategoryClickName]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_LandingPageSubCategoryURL">[LandingPageSubCategoryURL]</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>
