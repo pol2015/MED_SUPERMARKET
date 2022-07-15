@@ -4,11 +4,12 @@
     <x:Property Name="in_LandingPageJumbo" Type="InArgument(ui:Browser)" />
     <x:Property Name="in_PageNumber" Type="InArgument(x:Int32)" />
     <x:Property Name="out_dt_PageScrap" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="in_SectionPagesQty" Type="InArgument(x:Int32)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>592,1593</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1214,2248</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>JumboPageScrap_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -79,12 +80,13 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="JumboPageScrap" sap:VirtualizedContainerService.HintSize="602,1348" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="JumboPageScrap" sap:VirtualizedContainerService.HintSize="602,2183" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_PageScrap" />
       <Variable x:TypeArguments="x:Int32" Name="dtPageScrapRowQty" />
       <Variable x:TypeArguments="x:Int32" Name="TimeOut5000" />
       <Variable x:TypeArguments="ui:Browser" Name="JumboPageScrap" />
+      <Variable x:TypeArguments="x:Boolean" Name="isLastPageForSubSection" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -99,22 +101,51 @@
         <InArgument x:TypeArguments="x:Int32">5000</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" Browser="[in_LandingPageJumbo]" DisplayName="Attach Browser JumboPageScrap" sap:VirtualizedContainerService.HintSize="560,1156" sap2010:WorkflowViewState.IdRef="BrowserScope_2" UiBrowser="[JumboPageScrap]">
+    <Assign DisplayName="isLastPageForSubSection F" sap:VirtualizedContainerService.HintSize="560,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">[isLastPageForSubSection]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+      </Assign.Value>
+    </Assign>
+    <If Condition="[in_PageNumber = in_SectionPagesQty]" DisplayName="If in_PageNumber = in_SectionPagesQty" sap:VirtualizedContainerService.HintSize="560,247" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <Assign DisplayName="isLastPageForSubSection T" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:Boolean">[isLastPageForSubSection]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+          </Assign.Value>
+        </Assign>
+      </If.Then>
+      <If.Else>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" Browser="[in_LandingPageJumbo]" DisplayName="Attach Browser JumboPageScrap" sap:VirtualizedContainerService.HintSize="560,1604" sap2010:WorkflowViewState.IdRef="BrowserScope_2" UiBrowser="[JumboPageScrap]">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do JumboPageScrap" sap:VirtualizedContainerService.HintSize="526,1048" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do JumboPageScrap" sap:VirtualizedContainerService.HintSize="526,1496" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="484,497" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -126,7 +157,7 @@
                 </ui:ExtractData>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,458" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,335" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -137,7 +168,7 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Seq Extract Error" sap:VirtualizedContainerService.HintSize="376,389" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <Sequence DisplayName="Seq Extract Error" sap:VirtualizedContainerService.HintSize="376,266" sap2010:WorkflowViewState.IdRef="Sequence_6">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -146,21 +177,10 @@
                       <ui:RefreshBrowser Browser="[in_LandingPageJumbo]" DisplayName="Refresh Browser Error Extract" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="RefreshBrowser_1" />
                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke C3_JumboPageLoadWait Extract Error" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="C3_JumboPageLoadWait.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="ui:Browser" x:Key="in_LandingPageJumbo">
-                            <mva:VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="JumboPageScrap" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="in_PageNumber">
-                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_PageNumber" />
-                          </InArgument>
+                          <InArgument x:TypeArguments="ui:Browser" x:Key="in_LandingPageJumbo">[JumboPageScrap]</InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="in_PageNumber">[in_PageNumber]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
-                      <Sequence sap:VirtualizedContainerService.HintSize="334,83" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </Sequence>
                     </Sequence>
                   </ActivityAction>
                 </Catch>
@@ -174,15 +194,15 @@
                 <InArgument x:TypeArguments="x:Int32">[dt_PageScrap.Rows.Count]</InArgument>
               </Assign.Value>
             </Assign>
-            <If Condition="[dtPageScrapRowQty = 0]" DisplayName="If dtPageScrapRowQty" sap:VirtualizedContainerService.HintSize="484,663" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[dtPageScrapRowQty = 0]" DisplayName="If dtPageScrapRowQty" sap:VirtualizedContainerService.HintSize="484,667" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence DisplayName="Sequence if" sap:VirtualizedContainerService.HintSize="376,487" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Sequence if" sap:VirtualizedContainerService.HintSize="376,481" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke C3_JumboPageLoadWait workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="C3_JumboPageLoadWait.xaml">
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke C3_JumboPageLoadWait workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="C3_JumboPageLoadWait.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="ui:Browser" x:Key="inLandingPageJumbo">[in_LandingPageJumbo]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
@@ -196,11 +216,11 @@
                       </ui:Target>
                     </ui:ExtractData.Target>
                   </ui:ExtractData>
-                  <ui:LogMessage DisplayName="Log Message Extract Error" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Extract Error on Page Number: &quot; &amp; in_PageNumber.ToString]" />
+                  <ui:LogMessage DisplayName="Log Message Extract Error" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Extract Error on Page Number: &quot; &amp; in_PageNumber.ToString]" />
                 </Sequence>
               </If.Then>
             </If>
-            <Assign DisplayName="out_dt_PageScrap" sap:VirtualizedContainerService.HintSize="484,62" sap2010:WorkflowViewState.IdRef="Assign_17">
+            <Assign DisplayName="out_dt_PageScrap" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_17">
               <Assign.To>
                 <OutArgument x:TypeArguments="sd:DataTable">[out_dt_PageScrap]</OutArgument>
               </Assign.To>

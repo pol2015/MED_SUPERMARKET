@@ -3,11 +3,12 @@
     <x:Property Name="in_LandingPageJumbo" Type="InArgument(ui:Browser)" />
     <x:Property Name="in_PageNumber" Type="InArgument(x:Int32)" />
     <x:Property Name="in_ScrollDownPix" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_URL_PageWait" Type="InArgument(x:String)" />
   </x:Members>
   <this:C3_JumboPageLoadWait.in_ScrollDownPix>
     <InArgument x:TypeArguments="x:Int32" />
   </this:C3_JumboPageLoadWait.in_ScrollDownPix>
-  <sap:VirtualizedContainerService.HintSize>1214,2801</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1214,3090</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="30">
@@ -44,7 +45,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="33">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -78,7 +79,6 @@
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>ScrollActivity</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -86,7 +86,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Seq JumboPageLoadWait" sap:VirtualizedContainerService.HintSize="765,2736" sap2010:WorkflowViewState.IdRef="Sequence_14">
+  <Sequence DisplayName="Seq JumboPageLoadWait" sap:VirtualizedContainerService.HintSize="765,3025" sap2010:WorkflowViewState.IdRef="Sequence_14">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="TimeOut10000" />
       <Variable x:TypeArguments="x:Int32" Name="TimeOut3000" />
@@ -99,6 +99,9 @@
       <Variable x:TypeArguments="x:Boolean" Name="IsLoopToContinue" />
       <Variable x:TypeArguments="x:String" Name="variable1" />
       <Variable x:TypeArguments="x:Boolean" Name="IsElementExistsFacilSeguro" />
+      <Variable x:TypeArguments="x:String" Name="H1" />
+      <Variable x:TypeArguments="x:String" Name="T1" />
+      <Variable x:TypeArguments="x:String" Name="C3AttachSelector" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -154,13 +157,53 @@
         </Assign.Value>
       </Assign>
     </Sequence>
-    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_LandingPageJumbo]" BrowserType="Chrome" DisplayName="Attach Browser JumboPageLoadWait" sap:VirtualizedContainerService.HintSize="723,2105" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
+    <ui:Replace sap:VirtualizedContainerService.HintSize="723,59" sap2010:WorkflowViewState.IdRef="Replace_1" Input="[in_URL_PageWait]" IsBuilderTabModified="False" Pattern="&amp;" RegexOption="IgnoreCase, Compiled" Replacement="&amp;amp;" Result="[in_URL_PageWait]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:Replace>
+    <Assign sap:VirtualizedContainerService.HintSize="723,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[in_URL_PageWait]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[in_URL_PageWait &amp; "*"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="723,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[H1]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["&lt;html app='chrome.exe' url='"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="723,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[T1]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["' /&gt;"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="723,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[C3AttachSelector]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[h1 &amp; in_URL_PageWait &amp; T1]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser JumboPageLoadWait" sap:VirtualizedContainerService.HintSize="723,1897" sap2010:WorkflowViewState.IdRef="BrowserScope_1" Selector="[C3AttachSelector]">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do JumboPageLoadWait" sap:VirtualizedContainerService.HintSize="689,1957" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <Sequence DisplayName="Do JumboPageLoadWait" sap:VirtualizedContainerService.HintSize="689,1749" sap2010:WorkflowViewState.IdRef="Sequence_15">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -387,16 +430,16 @@
                 <InArgument x:TypeArguments="x:Boolean">True</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:InterruptibleDoWhile Condition="[IsLoopToContinue]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="647,1310" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+            <ui:InterruptibleDoWhile Condition="[IsLoopToContinue]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="647,1102" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
               <ui:InterruptibleDoWhile.Body>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="611,1105" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="611,897" sap2010:WorkflowViewState.IdRef="Sequence_29">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_LandingPageJumbo]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="569,319" sap2010:WorkflowViewState.IdRef="BrowserScope_2">
+                  <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Productos'" sap:VirtualizedContainerService.HintSize="569,357" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="d4e6ff3501b0546621814c007c2f494b" Selector="[C3AttachSelector]">
                     <ui:BrowserScope.Body>
                       <ActivityAction x:TypeArguments="x:Object">
                         <ActivityAction.Argument>
@@ -425,11 +468,11 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:BrowserScope>
-                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="569,297" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="569,51" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <TryCatch.Try>
@@ -452,11 +495,11 @@
                       </ui:Highlight>
                     </TryCatch.Try>
                     <TryCatch.Catches>
-                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,135" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <ActivityAction x:TypeArguments="s:Exception">
@@ -730,7 +773,7 @@
         <InArgument x:TypeArguments="x:String">[(EndTime.Subtract(StartTime)).ToString("hh\:mm\:ss")]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage DisplayName="Log Message Page Load" sap:VirtualizedContainerService.HintSize="434,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;PageLoadWait for page &quot;  &amp; in_PageNumber &amp; &quot; was: &quot; &amp; TimeDif]">
+    <ui:LogMessage DisplayName="Log Message Page Load" sap:VirtualizedContainerService.HintSize="723,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;PageLoadWait for page &quot;  &amp; in_PageNumber &amp; &quot; was: &quot; &amp; TimeDif]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">True</x:Boolean>
