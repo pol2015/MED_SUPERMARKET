@@ -3,6 +3,7 @@
   "description": "Blank Process",
   "main": "C0_Jumbo_SupermarketLandingPage.xaml",
   "dependencies": {
+    "ScrollActivity": "[1.0.2]",
     "UiPath.Excel.Activities": "[2.10.2-preview]",
     "UiPath.Mail.Activities": "[1.10.2-preview]",
     "UiPath.System.Activities": "[21.2.1-preview]",

@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="C3_Test" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="561,607" sap2010:WorkflowViewState.IdRef="C3_Test_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="C3_Test" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1214,829" sap2010:WorkflowViewState.IdRef="C3_Test_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="24">
+    <scg:List x:TypeArguments="x:String" Capacity="48">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -25,10 +25,11 @@
       <x:String>System.Collections.ObjectModel</x:String>
       <x:String>System.Activities.DynamicUpdate</x:String>
       <x:String>System.Runtime.Serialization</x:String>
+      <x:String>ScrollActivity</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="17">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -46,36 +47,71 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>ScrollActivity</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="C3_Test" sap:VirtualizedContainerService.HintSize="476,442" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="C3_Test" sap:VirtualizedContainerService.HintSize="554,764" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="ui:Browser" Name="Browser" />
+      <Variable x:TypeArguments="ui:Browser" Name="C3PageBrowser" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Productos'" sap:VirtualizedContainerService.HintSize="434,350" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="3088f1a0bd223be3b7e52ce1b621c57c" Selector="&lt;html app='chrome.exe' title='Productos de Pescadería, Pescados y Mariscos | Tiendas Jumbo - Tiendas Jumbo' /&gt;" UiBrowser="[Browser]">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser C3" sap:VirtualizedContainerService.HintSize="512,672" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="6c89a1a387d389f973facfe4b483d960" Selector="&lt;html app='chrome.exe' url='https://www.tiendasjumbo.co/supermercado/*' /&gt;" UiBrowser="[C3PageBrowser]">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,204" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="478,526" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke C3_JumboPageLoadWait workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="C3_JumboPageLoadWait.xaml">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,282" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,204" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke C3_JumboPageLoadWait - Copy (1) workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="C3_JumboPageLoadWait - Copy (1).xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="ui:Browser" x:Key="in_LandingPageJumbo">
+                        <mva:VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="C3PageBrowser" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:Int32" x:Key="in_PageNumber">
+                        <Literal x:TypeArguments="x:Int32" Value="1" />
+                      </InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke C3_JumboPageLoadWait workflow" sap:VirtualizedContainerService.HintSize="436,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="C3_JumboPageLoadWait.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="ui:Browser" x:Key="in_LandingPageJumbo">
-                  <mva:VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="Browser" />
+                  <mva:VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="C3PageBrowser" />
                 </InArgument>
                 <InArgument x:TypeArguments="x:Int32" x:Key="in_PageNumber">
                   <Literal x:TypeArguments="x:Int32" Value="1" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_ScrollDownPix">
+                  <Literal x:TypeArguments="x:Int32" Value="100" />
                 </InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
