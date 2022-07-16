@@ -8,7 +8,7 @@
   <this:C3_JumboPageLoadWait.in_ScrollDownPix>
     <InArgument x:TypeArguments="x:Int32" />
   </this:C3_JumboPageLoadWait.in_ScrollDownPix>
-  <sap:VirtualizedContainerService.HintSize>1214,3090</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1516,3282</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="30">
@@ -86,7 +86,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Seq JumboPageLoadWait" sap:VirtualizedContainerService.HintSize="765,3025" sap2010:WorkflowViewState.IdRef="Sequence_14">
+  <Sequence DisplayName="Seq JumboPageLoadWait" sap:VirtualizedContainerService.HintSize="765,3317" sap2010:WorkflowViewState.IdRef="Sequence_14">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="TimeOut10000" />
       <Variable x:TypeArguments="x:Int32" Name="TimeOut3000" />
@@ -157,39 +157,63 @@
         </Assign.Value>
       </Assign>
     </Sequence>
-    <ui:Replace sap:VirtualizedContainerService.HintSize="723,59" sap2010:WorkflowViewState.IdRef="Replace_1" Input="[in_URL_PageWait]" IsBuilderTabModified="False" Pattern="&amp;" RegexOption="IgnoreCase, Compiled" Replacement="&amp;amp;" Result="[in_URL_PageWait]">
+    <Sequence DisplayName="Seq URL" sap:VirtualizedContainerService.HintSize="723,551" sap2010:WorkflowViewState.IdRef="Sequence_36">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsPinned">True</x:Boolean>
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-    </ui:Replace>
-    <Assign sap:VirtualizedContainerService.HintSize="723,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+      <ui:Replace sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="Replace_1" Input="[in_URL_PageWait]" IsBuilderTabModified="False" Pattern="&amp;" RegexOption="IgnoreCase, Compiled" Replacement="&amp;amp;" Result="[in_URL_PageWait]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:Replace>
+      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_URL_PageWait]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[in_URL_PageWait &amp; "*"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[H1]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["&lt;html app='chrome.exe' url='"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[T1]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["' /&gt;"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[C3AttachSelector]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[h1 &amp; in_URL_PageWait &amp; T1]</InArgument>
+        </Assign.Value>
+      </Assign>
+    </Sequence>
+    <Assign sap:VirtualizedContainerService.HintSize="723,60" sap2010:WorkflowViewState.IdRef="Assign_17">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[in_URL_PageWait]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[in_URL_PageWait &amp; "*"]</InArgument>
+        <InArgument x:TypeArguments="x:String">https://www.tiendasjumbo.co/supermercado/*</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="723,60" sap2010:WorkflowViewState.IdRef="Assign_13">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[H1]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">["&lt;html app='chrome.exe' url='"]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="723,60" sap2010:WorkflowViewState.IdRef="Assign_14">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[T1]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">["' /&gt;"]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="723,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+    <Assign sap:VirtualizedContainerService.HintSize="723,60" sap2010:WorkflowViewState.IdRef="Assign_18">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[C3AttachSelector]</OutArgument>
       </Assign.To>
